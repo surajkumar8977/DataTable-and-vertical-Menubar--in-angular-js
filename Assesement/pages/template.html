@@ -1,0 +1,116 @@
+<div class="main">
+ <div class="container">
+      <div class="blocklevel"> 
+          <div class="row">
+                <div class='alert alert-success submit-sucess'>
+                    Data Added Succeesfully!
+                </div>
+                <div class='alert alert-danger'>
+                    Please fill all the mandatory fields!
+                </div>
+          </div>
+          <div class="row">
+         <div class="col-md-4 col-lg-4">
+							<label>Template ID</label>
+							<input type="number" class="form-control" id="Description" ng-model="tmplId" placeholder="" name=''/>
+						</div>
+             <div class="col-md-4 col-lg-4">
+							<label>Template Type</label>
+				                <select class="form-control in" ng-model="tmplType">
+								<option value="">Select Template</option>
+                                <option ng-repeat='data in templateTypeRole' value="{{data.roleType}}">
+						{{data.roleType}}</option>
+							</select>
+						</div>
+             <div class="col-md-4 col-lg-4">
+							<label>Template Name</label>
+							<input type="text" class="form-control" id="Description" ng-model="tmplName" placeholder="" name=''/>
+						</div>
+             <div class="col-md-4 col-lg-4">
+							<label>Status</label>
+								<select class="form-control in" ng-model="tmplStatus">
+								<option value="">Select Satus</option>
+                                <option ng-repeat='data in stausVal' value="{{data.status}}">
+						{{data.status}}</option>
+							</select>
+						</div>
+          </div>   
+          <div class="row btnalignment">
+                        <div class="col-md-4 col-lg-4">
+                <button type="button" class="btn btn-primary" ng-click="addRow()">Add</button>
+              </div>
+          </div>
+     </div>
+  <div class="panel">
+  <div class="panel-heading border">    
+  </div>
+  <div class="panel-body">
+       <table class="table table-striped table-bordered" datatable="ng">
+    <thead>
+      <tr>          <th>Template ID</th>
+          <th>Template Name</th>
+          <th>Template Type</th>
+          <th>Status</th>
+          <th>Action</th></tr>
+    </thead>
+    <tbody>
+     <tr ng-repeat="n in data">
+            <td>{{n.tempId}}</td>
+            <td>{{n.tempName}}</td>
+            <td>{{n.tempType}}</td>
+<!--            <td>{{n.tmpDate}}</td>-->
+            <td>{{n.status}}</td>
+            <td>
+         
+  <md-switch ng-model="n.toggle" aria-label="Switch 1" ng-click='toggle(n)'>
+
+  </md-switch>
+
+                
+         </td>
+<!--            <td>{{n[4] | date:'dd/MM/yyyy'}}</td>-->
+<!--
+          </tr>
+    </tbody>
+  </table>  
+      
+      
+      
+      
+<!--
+      <table class="table table-bordered bordered table-striped table-condensed datatable" ui-jq="dataTable" ui-options="dataTableOpt">
+      <thead>
+        <tr>
+          <th>Template ID</th>
+          <th>Template Name</th>
+          <th>Template Type</th>
+          <th>Status</th>
+          <th>Action</th>
+-->
+<!--          <th>Start Date</th>-->
+<!--
+        </tr>
+      </thead>
+        <tbody>
+          <tr ng-repeat="n in data">
+            <td>{{n.tempId}}</td>
+            <td>{{n.tempName}}</td>
+            <td>{{n.tempType}}</td>
+-->
+<!--            <td>{{n.tmpDate}}</td>-->
+<!--            <td>{{n.status}}</td>-->
+<!--
+            <td><div class="make-switch" ng-click= "activated(n)">
+                <input type="checkbox" checked="true" class="probeProbe{{n.tempId}} probeProbe"/>
+                </div></td>
+-->
+<!--            <td>{{n[4] | date:'dd/MM/yyyy'}}</td>-->
+<!--
+          </tr>
+        </tbody>
+    </table>
+-->
+  </div>
+</div>
+</div>
+</div>
